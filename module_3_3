@@ -1,0 +1,17 @@
+def print_params(a=1, b='строка', c=True):
+    print(a, b, c)
+
+print_params()  # a: 1, b: строка, c: True
+print_params(10)  # a: 10, b: строка, c: True
+print_params(b=25)  # a: 1, b: 25, c: True
+print_params(c=[1, 2, 3])  # a: 1, b: строка, c: [1, 2, 3]
+print_params(5, 'текст', False)  # a: 5, b: текст, c: False
+
+values_list = [3.14, 'пример', False]
+values_dict = {'a': 42, 'b': 'другая строка', 'c': True}
+
+print_params(*values_list)  # a: 3.14, b: пример, c: False
+print_params(**values_dict)  # a: 42, b: другая строка, c: True
+
+values_list_2 = [54.32, 'Строка']
+print_params(*values_list_2, 42)  # a: 54.32, b: Строка, c: 42
